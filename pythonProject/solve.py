@@ -28,6 +28,8 @@ def solve(factory, method, input_file, output_file):
     [title, solver] = factory.createsolver(method)
     print("Starting Solve - ", title)
     [result, stats] = solver(maze)
+    
+    
 
     # Print solve stats
     print("Nodes explored: ", stats[0])
