@@ -10,7 +10,7 @@ class Maze:
             self.Neighbours = [None, None, None, None]   # self.Weights = [0, 0, 0, 0]
 
     def __init__(self, im):
-
+    #This constructor traverses across the image(im) and constructs the graph strcuture.
         width = im.size[0]
         height = im.size[1]
         data = list(im.getdata(0))
@@ -22,7 +22,7 @@ class Maze:
         topnodes = [None] * width
         count = 0
 
-        # Start row
+        # Start row - For finding the start node
         for x in range(1, width - 1):
             if data[x] > 0:
                 self.start = Maze.Node((0, x))
@@ -30,6 +30,8 @@ class Maze:
                 count += 1
                 break
 
+        #Now, we go to every single pixel in each row and based on previous square, current square we are on and next square we have to make a decision 
+        #whether to create a node at that square and connect it to left or above node(As we are moving downwards and traversing through rows from left to right).  
         for y in range(1, height - 1):
             print("row", str(y))  # Progress of the graph
 
@@ -102,7 +104,7 @@ class Maze:
 
                     count += 1
 
-        # End row -  For Exit
+        # End row - For end nodes
         rowoffset = (height - 1) * width
         for x in range(1, width - 1):
             if data[rowoffset + x] > 0:
