@@ -1,13 +1,13 @@
 
-""" Creating the graph with the image given ( Traversing anf finding the path through the image is faster than
-    finding the path through the actual maze. We read from the image once per pixel"""
+""" Creating the graph with the image given ( Traversing and finding the path through the image is faster than
+    finding the path through the actual maze) We read from the image once per pixel"""
 
-
+#Node Class
 class Maze:
-    class Node:
+    class Node: 
         def __init__(self, position):
-            self.Position = position
-            self.Neighbours = [None, None, None, None]   # self.Weights = [0, 0, 0, 0]
+            self.Position = position 
+            self.Neighbours = [None, None, None, None]   #Neighbours of the node, None is equivalent to wall
 
     def __init__(self, im):
     #This constructor traverses across the image(im) and constructs the graph strcuture.
@@ -60,11 +60,11 @@ class Maze:
 
                 if prv == True:
                     if nxt == True:
-                        # Create node only if paths above or below
+                        #PATH PATH PATH 
                         if data[rowaboveoffset + x] > 0 or data[rowbelowoffset + x] > 0:
                             n = Maze.Node((y, x))
-                            leftnode.Neighbours[1] = n
-                            n.Neighbours[3] = leftnode
+                            leftnode.Neighbours[1] = n #Creating a node and connecting to its neighbour
+                            n.Neighbours[3] = leftnode 
                             leftnode = n
                     else:
                         # Path Path Wall
