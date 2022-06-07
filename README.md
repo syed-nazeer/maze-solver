@@ -44,6 +44,8 @@ We've put this graph in a class called maze class.
 Now, our target is to go from start node to end node.
 
 
+Action value method : estimation of mean of rewards corresponding to the actions.
+
 
 
 
