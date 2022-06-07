@@ -10,7 +10,7 @@ Group Members :
 
 201951061@iiitvadodara.ac.in - Gaini Om Prakash
 
-201951086@iiitvadodara.ac.in - Dharavath Rajeev Gandhi
+201951186@iiitvadodara.ac.in - Dharavath Rajeev Gandhi
 
 
 ## Putting Search Algorithms into practice
